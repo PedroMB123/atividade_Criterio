@@ -12,7 +12,7 @@ export default function Home() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Text>Página home</Text>
+      <Text>Boas-vindas ao site!!</Text>
 
       <Button title="login" onPress={() => navigation.navigate("login")}></Button>
     </View >
