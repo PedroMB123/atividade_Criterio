@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+
+// Fornece o componente que vai envolver nossa navegação!
+import { NavigationContainer } from '@react-navigation/native';
+// Importando as funções da rota stack
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// IMPORT PAGES
+import home from './src/pages/home';
+import login from './src/pages/login';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="login" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="home" component={home} options={{ headerShown: false }} />
+        <Stack.Screen name="login" component={login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
