@@ -25,7 +25,7 @@ export default function Login() {
 
       setTimeout(() => {
         setVisible(false)
-      }, 1500);
+      }, 2500);
     }
   }
 
